@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="author" content="Jeisson Hidalgo-Céspedes"/>
+	<link rel="icon" type="image/svg+xml" href="img/favicon.svg"/>
+	<link rel="stylesheet" type="text/css" href="css/client.css"/>
+	<title>Nodo verde node_id</title>
+</head>
+<body data-host="node_ip" data-ws-port="ws_port"><!-- data host se usa para pasar datos de programacion. se obtienen desde js-->
+	<main>
+		<article id="send_area">
+			<header id="site_header">
+				<img src="img/favicon.svg" alt="Logo del sitio web" width="64"/>
+				<h1>Nodo verde <em>node_id</em></h1> <!-- inserta nombre de nodo verde -->
+				<p id="estado" class="error">Desconectado</p> <!-- indica en pagina html si estoy conectado-->
+			</header>
+			<div id="form">
+				<p id="lista_vecinos"> <!-- hay que aplicar logica similar a la de mensajes recibidos. creae input y labe-->    
+				    <input type="radio" id="brd" name="vecinos" value="BROADCAST" checked="checked"/>
+					<label for="brd">TODOS</label><ensp/>
+
+					<input type="radio" id="rnd" name="vecinos" value="RANDOM"/>
+					<label for="rnd">AL AZAR</label><br/>
+					
+				</p>
+				<p id="send_controls">
+				<input id="message_field" type="text" placeholder="message (200 bytes)"/>
+				<input id="file" type="file" name="file"/>
+				<button id="file_button">Adjuntar</button>
+				<button id="send_button">Enviar</button>
+				</p>
+			</div>
+		</article>
+		<article>
+			<h2>Mensajes recibidos</h2>
+			<div id="mensajes"></div>
+		</article>
+	</main>
+	<script src="js/client.js" async="async"></script>
+</body>
+</html>
